@@ -15,6 +15,7 @@ router.post('/login', rateLimiter.loginLimiter, validation.validateBody(validati
 // @access  Public (should be disabled in production)
 router.post('/init', authController.initAdmin);
 
+
 // @route   POST /api/admin/forgot-password
 // @desc    Request password reset
 // @access  Public
