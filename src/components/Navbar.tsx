@@ -49,7 +49,11 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-body text-brand-grey-600 dark:text-brand-grey-400 hover:text-brand-black dark:hover:text-white transition-colors"
+                // className="text-body text-brand-grey-600 dark:text-brand-grey-400 hover:text-brand-black dark:hover:text-white transition-colors"
+                className={`text-body transition-colors ${pathName.startsWith(item.href)
+                  ? "text-accent font-semibold"   // ACTIVE STYLE
+                  : "text-brand-grey-600 dark:text-brand-grey-400 dark:hover:text-accent  hover:text-accent" // NORMAL STYLE
+                  }`}
               >
                 {item.name}
               </Link>
@@ -106,7 +110,11 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-body text-brand-grey-600 dark:text-brand-grey-400 hover:text-brand-black dark:hover:text-white transition-colors py-3"
+                  // className="text-body text-brand-grey-600 dark:text-brand-grey-400 hover:text-brand-black dark:hover:text-white transition-colors py-3"
+                  className={`text-body transition-colors ${pathName.startsWith(item.href)
+                    ? "text-accent font-semibold"   // ACTIVE STYLE
+                    : "text-brand-grey-600 dark:text-brand-grey-400  hover:text-accent" // NORMAL STYLE
+                    }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
