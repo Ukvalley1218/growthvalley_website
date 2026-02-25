@@ -38,7 +38,13 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   // Social links from settings
-  const socialLinks = settings?.socialLinks || {};
+  const socialLinks: {
+  linkedin?: string;
+  twitter?: string;
+  facebook?: string;
+  instagram?: string;
+  youtube?: string;
+} = settings?.socialLinks || {};
   const copyrightText = settings?.footer?.copyrightText || `© ${currentYear} ${siteName}. All rights reserved.`;
 
   return (

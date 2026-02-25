@@ -43,9 +43,9 @@ export default async function BlogPage() {
   return (
     <>
       <PageHeader
-        title="Blog"
-        subtitle="Insights, strategies, and best practices for B2B revenue growth from our team."
-      />
+  title="Blog"
+  description="Insights, strategies, and best practices for B2B revenue growth from our team."
+/>
 
       {/* Featured Posts */}
       {featuredPosts.length > 0 && (
