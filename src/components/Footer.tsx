@@ -37,6 +37,7 @@ export default function Footer() {
   const { logo: footerLogo, hasLogo, siteName } = useLogo();
   const currentYear = new Date().getFullYear();
   
+  
   // Social links from settings
   const socialLinks: {
   linkedin?: string;
