@@ -76,7 +76,7 @@ export default function SettingsPage() {
   const getFullUrl = (path: string | undefined) => {
     if (!path) return '';
     if (path.startsWith('http')) return path;
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://growthvalley-website.onrender.com';
     return `${apiUrl}${path}`;
   };
 

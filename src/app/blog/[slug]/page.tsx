@@ -10,7 +10,7 @@ interface Props {
 async function getBlog(slug: string) {
   try {
     const res = await fetch(
-      `${process.env.API_URL || "http://localhost:3001"}/api/blog/${slug}`,
+      `${process.env.API_URL || "https://growthvalley-website.onrender.com"}/api/blog/${slug}`,
       { cache: "no-store" }
     );
     if (!res.ok) return null;
@@ -25,7 +25,7 @@ async function getBlog(slug: string) {
 async function getRelatedBlogs(currentSlug: string, category: string) {
   try {
     const res = await fetch(
-      `${process.env.API_URL || "http://localhost:3001"}/api/blog`,
+      `${process.env.API_URL || "https://growthvalley-website.onrender.com"}/api/blog`,
       { cache: "no-store" }
     );
     if (!res.ok) return [];
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: Props) {
 export async function generateStaticParams() {
   try {
     const res = await fetch(
-      `${process.env.API_URL || "http://localhost:3001"}/api/blog`
+      `${process.env.API_URL || "https://growthvalley-website.onrender.com"}/api/blog`
     );
     if (!res.ok) return [];
     const data = await res.json();

@@ -4,7 +4,7 @@ module.exports = {
   // Server
   port: parseInt(process.env.PORT, 10) || 3001,
   nodeEnv: process.env.NODE_ENV || 'development',
-  frontendUrl: process.env.FRONTEND_URL || 'http://localhost:3000',
+  frontendUrl: process.env.FRONTEND_URL || 'https://localhost:3000',
   
   // Database
   mongodbUri: process.env.MONGODB_URI || 'mongodb://localhost:27017/growthvalley',
@@ -28,7 +28,7 @@ module.exports = {
   },
   
   // Password Reset
-  resetPasswordUrl: process.env.RESET_PASSWORD_URL || 'http://localhost:3000/admin/reset-password',
+  resetPasswordUrl: process.env.RESET_PASSWORD_URL || 'https://growthvalley-website.onrender.com/admin/reset-password',
   resetTokenExpires: parseInt(process.env.RESET_TOKEN_EXPIRES, 10) || 3600000,
   
   // Upload

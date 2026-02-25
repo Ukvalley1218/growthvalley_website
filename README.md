@@ -29,13 +29,13 @@ A production-ready enterprise website built with Next.js 14, Tailwind CSS, and E
    cd backend
    npm run dev
    ```
-   The API server runs on `http://localhost:3001`
+   The API server runs on `https://growthvalley-website.onrender.com`
 
 2. **Start the Frontend** (Terminal 2)
    ```bash
    npm run dev
    ```
-   The Next.js app runs on `http://localhost:3000`
+   The Next.js app runs on `https://growthvalley-website.onrender.com`
 
 ### Production Build
 

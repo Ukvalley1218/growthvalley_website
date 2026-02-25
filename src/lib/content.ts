@@ -1,7 +1,7 @@
 // Content fetching utilities for frontend pages
 // Provides fallback content from defaults if API fails
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://growthvalley-website.onrender.com';
 
 // Default content structures (same as backend)
 const defaultContent = {
