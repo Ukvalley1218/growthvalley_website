@@ -5,6 +5,8 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useAuth } from '@/lib/auth-context';
 import { useLogo } from '@/lib/settings-context';
 
+// add new import
+
 const navigation = [
   { name: 'Dashboard', href: '/admin', icon: '📊' },
   { name: 'Content', href: '/admin/content', icon: '📄' },
@@ -57,8 +59,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <div className="h-16 flex items-center justify-center border-b border-brand-grey-800">
           <Link href="/admin" className="flex items-center gap-2">
             {hasLogo && adminLogo ? (
-              <img 
-                src={adminLogo} 
+              <img
+                src={adminLogo}
                 alt={siteName}
                 className="h-8 w-auto"
               />
@@ -74,19 +76,18 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <nav className="flex-1 overflow-y-auto p-4">
           <ul className="space-y-1">
             {navigation.map((item) => {
-              const isActive = pathname === item.href || 
+              const isActive = pathname === item.href ||
                 (item.href !== '/admin' && pathname?.startsWith(item.href));
-              
+
               return (
                 <li key={item.name}>
                   <Link
                     href={item.href}
                     target={item.external ? '_blank' : undefined}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-                      isActive
+                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive
                         ? 'bg-accent text-brand-black font-medium'
                         : 'text-brand-grey-300 hover:bg-brand-grey-800 hover:text-white'
-                    }`}
+                      }`}
                   >
                     <span>{item.icon}</span>
                     <span>{item.name}</span>

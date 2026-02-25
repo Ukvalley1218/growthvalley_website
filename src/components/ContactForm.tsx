@@ -117,6 +117,10 @@ export default function ContactForm({ interests, contactInfo, expectations, succ
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  minLength={3}
+                  maxLength={40}
+                  pattern="^[A-Za-z\s]+$"
+                  title="Name should contain only letters and spaces"
                   className="w-full px-4 py-3 border border-brand-grey-200 dark:border-brand-grey-700 bg-white dark:bg-brand-grey-900 text-brand-black dark:text-white focus:border-accent focus:outline-none"
                   placeholder="John Smith"
                 />
@@ -156,6 +160,9 @@ export default function ContactForm({ interests, contactInfo, expectations, succ
                   value={formData.company}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-brand-grey-200 dark:border-brand-grey-700 bg-white dark:bg-brand-grey-900 text-brand-black dark:text-white focus:border-accent focus:outline-none"
+                  minLength={2}
+                  maxLength={50}
+                  pattern="^[A-Za-z0-9&.\-\s]+$"
                   placeholder="Company Name"
                 />
               </div>
@@ -172,8 +179,10 @@ export default function ContactForm({ interests, contactInfo, expectations, succ
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
+                  pattern="[6-9]{1}[0-9]{9}"
+                  title="Enter valid 10 digit Indian mobile number"
                   className="w-full px-4 py-3 border border-brand-grey-200 dark:border-brand-grey-700 bg-white dark:bg-brand-grey-900 text-brand-black dark:text-white focus:border-accent focus:outline-none"
-                  placeholder="+1 (555) 000-0000"
+                  placeholder="9876543210"
                 />
               </div>
             </div>
@@ -189,6 +198,7 @@ export default function ContactForm({ interests, contactInfo, expectations, succ
                 id="interest"
                 name="interest"
                 value={formData.interest}
+                required
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-brand-grey-200 dark:border-brand-grey-700 bg-white dark:bg-brand-grey-900 text-brand-black dark:text-white focus:border-accent focus:outline-none"
               >

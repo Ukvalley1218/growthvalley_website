@@ -9,7 +9,6 @@
     "test": "jest",
     "lint": "eslint ."
   },
-
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -26,8 +25,8 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "nodemon": "^3.0.0",
-    "eslint": "^8.56.0"
+    "eslint": "^8.56.0",
+    "nodemon": "^3.1.14"
   },
   "engines": {
     "node": ">=18.0.0"

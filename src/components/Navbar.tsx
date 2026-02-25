@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { useLogo } from "@/lib/settings-context";
 
+// new Import
+import { usePathname } from "next/navigation";
 const navigation = [
   { name: "Solutions", href: "/solutions" },
   { name: "Industries", href: "/industries" },
@@ -17,7 +19,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { logo, hasLogo, siteName } = useLogo();
   const [mounted, setMounted] = useState(false);
-
+  const pathName = usePathname();
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -29,8 +31,8 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             {mounted && hasLogo && logo ? (
-              <img 
-                src={logo} 
+              <img
+                src={logo}
                 alt={siteName}
                 className="h-8 w-auto"
               />
