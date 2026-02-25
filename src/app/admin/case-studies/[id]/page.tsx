@@ -82,7 +82,7 @@ export default function EditCaseStudyPage() {
   const loadCaseStudy = async () => {
     try {
       // Fetch by ID for admin - need to add getById to admin-api
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'https://growthvalley-website.onrender.com'}/api/case-studies/admin/${params.id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'}/api/case-studies/admin/${params.id}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('adminToken')}`,
           'Content-Type': 'application/json',

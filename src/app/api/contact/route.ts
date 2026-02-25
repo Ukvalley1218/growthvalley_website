@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 // Proxy to backend API server
-const API_URL = process.env.API_URL || "https://growthvalley-website.onrender.com";
+const API_URL = process.env.API_URL || "http://localhost:3001";
 
 export async function POST(request: NextRequest) {
   try {

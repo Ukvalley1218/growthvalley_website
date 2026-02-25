@@ -159,7 +159,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
 
   const fetchSettings = async () => {
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://growthvalley-website.onrender.com';
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
       const response = await fetch(`${apiUrl}/api/settings`, {
         cache: 'no-store',
         headers: {
@@ -237,7 +237,7 @@ export function useLogo() {
   const getLogoUrl = (path: string | undefined): string => {
     if (!path) return '';
     if (path.startsWith('http')) return path;
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://growthvalley-website.onrender.com';
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
     return `${apiUrl}${path}`;
   };
 

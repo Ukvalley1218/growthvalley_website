@@ -15,7 +15,7 @@ export const revalidate = 60; // Revalidate every 60 seconds
 async function getBlogs() {
   try {
     const res = await fetch(
-      `${process.env.API_URL || "https://growthvalley-website.onrender.com"}/api/blog`,
+      `${process.env.API_URL || "http://localhost:3001"}/api/blog`,
       { cache: "no-store" }
     );
     if (!res.ok) return [];

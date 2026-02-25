@@ -1,6 +1,6 @@
 // Admin API utility functions
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://growthvalley-website.onrender.com';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
 
 // Token management
 export const getToken = () => {
