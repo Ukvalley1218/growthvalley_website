@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
 async function getTeamMembers() {
   try {
     const res = await fetch(
-      `${process.env.API_URL || "http://localhost:3001"}/api/team`,
+      `${process.env.API_URL || "https://growthvalley-website.onrender.com"}/api/team`,
       { cache: "no-store" }
     );
     if (!res.ok) return [];

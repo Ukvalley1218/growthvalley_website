@@ -10,7 +10,7 @@ interface Props {
 async function getCaseStudy(slug: string) {
   try {
     const res = await fetch(
-      `${process.env.API_URL || "http://localhost:3001"}/api/case-studies/${slug}`,
+      `${process.env.API_URL || "https://growthvalley-website.onrender.com"}/api/case-studies/${slug}`,
       { cache: "no-store" }
     );
     if (!res.ok) return null;
