@@ -36,7 +36,7 @@ export default function ContactForm({ interests, contactInfo, expectations, succ
     setStatus("submitting");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://growthvalley-website.onrender.com/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
