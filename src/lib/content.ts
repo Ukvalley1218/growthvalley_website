@@ -79,7 +79,7 @@ const defaultContent = {
       buttonLink: '/contact'
     }
   },
-  
+
   company: {
     hero: {
       title: 'About Growth Valley',
@@ -120,7 +120,7 @@ const defaultContent = {
       buttonLink: '/contact'
     }
   },
-  
+
   services: {
     hero: {
       title: 'Revenue Solutions That Scale',
@@ -163,7 +163,7 @@ const defaultContent = {
       buttonLink: '/contact'
     }
   },
-  
+
   industries: {
     hero: {
       title: 'Industry Expertise',
@@ -214,7 +214,7 @@ const defaultContent = {
       buttonLink: '/contact'
     }
   },
-  
+
   'case-studies': {
     hero: {
       title: 'Case Studies',
@@ -240,7 +240,7 @@ const defaultContent = {
       buttonLink: '/contact'
     }
   },
-  
+
   contact: {
     hero: {
       title: 'Get in Touch',
@@ -274,7 +274,7 @@ const defaultContent = {
       description: 'Thank you for reaching out. We\'ll get back to you within one business day.'
     }
   },
-  
+
   privacy: {
     hero: {
       title: 'Privacy Policy',
@@ -336,7 +336,7 @@ const defaultContent = {
       buttonLink: '/contact'
     }
   },
-  
+
   terms: {
     hero: {
       title: 'Terms & Conditions',
@@ -426,14 +426,19 @@ export type PageContent = {
  */
 export async function getPageContent(page: string): Promise<PageContent> {
   const pageKey = page.toLowerCase();
-  
+
   try {
+    // const response = await fetch(`${API_URL}/api/content/${pageKey}`, {
+
+    //   next: { revalidate: 60 } // Cache for 60 seconds
+    // });
+
     const response = await fetch(`${API_URL}/api/content/${pageKey}`, {
-      next: { revalidate: 60 } // Cache for 60 seconds
+      cache: "no-store"
     });
-    
     if (response.ok) {
       const data = await response.json();
+      // console.log("Industri data : ", data.data)
       if (data.success && data.data) {
         return {
           ...data.data,
@@ -447,7 +452,7 @@ export async function getPageContent(page: string): Promise<PageContent> {
   } catch (error) {
     console.error(`Failed to fetch content for ${page}:`, error);
   }
-  
+
   // Return defaults if API fails
   return {
     page: pageKey,
@@ -514,10 +519,10 @@ export function getPageSEO(content: PageContent, pageName: string) {
       description: 'Read the terms and conditions for using Growth Valley\'s website and consulting services.'
     }
   };
-  
+
   const pageKey = pageName.toLowerCase();
   const defaultMeta = defaults[pageKey] || { title: 'Growth Valley', description: '' };
-  
+
   return {
     title: content.seo?.metaTitle || defaultMeta.title,
     description: content.seo?.metaDescription || defaultMeta.description,

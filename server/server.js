@@ -155,10 +155,10 @@ const server = app.listen(PORT, () => {
   console.log(`
 ╔════════════════════════════════════════════════════════════╗
 ║                                                            ║
-║   🚀 Growth Valley CMS API Server                          ║
+║   🚀 Growth Valley CMS API Server                         ║
 ║                                                            ║
-║   Port: ${PORT}                                              ║
-║   Environment: ${config.nodeEnv}                              ║
+║   Port: ${PORT}                                            ║
+║   Environment: ${config.nodeEnv}                           ║
 ║   MongoDB: ${(config.mongodbUri ? config.mongodbUri.split('@')[1] || 'Local' : 'Not configured').padEnd(30)}  ║
 ║                                                            ║
 ╚════════════════════════════════════════════════════════════╝

@@ -12,26 +12,46 @@ export default function LoginPage() {
   const { login, isAuthenticated } = useAuth();
   const router = useRouter();
 
+  // useEffect(() => {
+  //   if (isAuthenticated) {
+  //     router.push('/admin');
+  //   }
+  // }, [isAuthenticated, router]);
+
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setError('');
+  //   setLoading(true);
+
+  //   const result = await login(email, password);
+
+  //   if (result.success) {
+  //     router.push('/admin');
+  //   } else {
+  //     setError(result.error || 'Invalid credentials');
+  //   }
+
+  //   setLoading(false);
+  // };
+
   useEffect(() => {
     if (isAuthenticated) {
-      router.push('/admin');
+      router.replace('/admin'); // ✅ redirect only here
     }
   }, [isAuthenticated, router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     setError('');
     setLoading(true);
 
     const result = await login(email, password);
-    
-    if (result.success) {
-      router.push('/admin');
-    } else {
+
+    if (!result.success) {
       setError(result.error || 'Invalid credentials');
+      setLoading(false);
     }
-    
-    setLoading(false);
   };
 
   return (
@@ -46,7 +66,7 @@ export default function LoginPage() {
         {/* Login form */}
         <form onSubmit={handleSubmit} className="bg-brand-grey-900 dark:bg-brand-grey-900 p-8 rounded-lg border border-brand-grey-800 dark:border-brand-grey-700">
           <h2 className="text-2xl font-semibold text-white mb-6">Sign In</h2>
-          
+
           {error && (
             <div className="bg-red-500/10 border border-red-500 dark:border-red-400 text-red-500 dark:text-red-400 px-4 py-3 rounded mb-4">
               {error}
